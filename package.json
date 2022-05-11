@@ -19,7 +19,7 @@
     "lint": "eslint . --ext js,ts",
     "type-check": "tsc --noEmit",
     "test": "jest",
-    "prebuild": "npm run clean && maizzle build production && copy-files-from-to",
+    "prebuild": "npm run clean && copy-files-from-to",
     "build": "tsc --build",
     "clean": "rm -rf dist/emailTemplates && tsc --build --clean",
     "semantic-release": "semantic-release",
