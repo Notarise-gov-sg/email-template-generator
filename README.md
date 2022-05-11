@@ -2,7 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/notarise-gov-sg/email-template-generator)](https://github.com/notarise-gov-sg/email-template-generator/issues)
 [![License](https://img.shields.io/github/license/notarise-gov-sg/email-template-generator)](https://github.com/Notarise-gov-sg/email-template-generator/blob/master/LICENSE)
 
-# Generate EU Digital Covid Certificates
+# Generate Notarise email templates
 
 A helper library for generate Notarise email templates.
 
