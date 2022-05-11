@@ -1,0 +1,72 @@
+{
+  "name": "@notarise-gov-sg/email-template-generator",
+  "version": "0.0.0-development",
+  "description": "A helper library for generate Notarise email templates",
+  "author": {
+    "name": "Notarise",
+    "email": "notariseteamsg@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Notarise-gov-sg/email-template-generator.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext js,ts",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "prebuild": "npm run clean && maizzle build production && copy-files-from-to",
+    "build": "tsc --build",
+    "clean": "rm -rf dist/emailTemplates && tsc --build --clean",
+    "semantic-release": "semantic-release",
+    "maizzle:build": "maizzle build",
+    "maizzle:build-prod": "maizzle build production",
+    "maizzle:watch": "maizzle serve"
+  },
+  "copyFiles":[
+    {
+      "from": "src/emailTemplates/*",
+      "to": "dist/emailTemplates/"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^4.3.3",
+    "tailwindcss-font-inter": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@maizzle/cli": "^1.4.0",
+    "@maizzle/framework": "^3.7.3",
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "copy-files-from-to": "^3.2.2",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.3",
+    "jest": "^27.4.5",
+    "semantic-release": "^19.0.2",
+    "typescript": "^4.5.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Notarise-gov-sg/email-template-generator/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  }
+}

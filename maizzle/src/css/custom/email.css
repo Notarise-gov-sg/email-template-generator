@@ -1,0 +1,97 @@
+.email-body {
+  @apply bg-white;
+}
+
+.cert-preview {
+  @apply text-gray-500;  
+}
+
+.email-wrapper,
+.travel-advice,
+.gpay-box {
+  @apply bg-gray-100 text-gray-700;
+}
+
+.line {
+  @apply border-0 bg-gray-200 text-gray-200 h-px;
+}
+
+.oa-note {
+  @apply bg-yellow-50 text-gray-700;
+}
+
+.light-logo {
+  @apply block;
+}
+
+.dark-logo {
+  @apply hidden;
+}
+
+.hyperlink {
+  @apply text-blue-700;
+}
+
+.textlink {
+  @apply text-gray-700;
+}
+
+@screen dark {
+  body,
+  .travel-advice,
+  .email-body_inner,
+  .email-wrapper,
+  .email-content,
+  .email-masthead,
+  .email-footer {
+    @apply bg-gray-800 text-white !important;
+  }
+
+  .email-body {
+    @apply bg-black text-white !important;
+  }
+
+  .cert-preview {
+    @apply text-gray-600 !important;  
+  }
+
+  .line {
+    @apply border-0 bg-gray-700 text-gray-700 h-px;
+  }
+
+  .oa-note,
+  .gpay-box {
+    @apply bg-gray-900 text-white !important;
+  }
+
+  .light-logo {
+    @apply hidden !important;
+  }
+
+  .dark-logo {
+    @apply block !important;
+  }
+
+  .hyperlink {
+    @apply text-blue-300 !important;
+  }
+
+  .textlink {
+    @apply text-white !important;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  h1,
+  h2,
+  h3 {
+    @apply text-white !important;
+  }
+
+
+  .email-masthead_name {
+    text-shadow: none !important;
+  }
+}

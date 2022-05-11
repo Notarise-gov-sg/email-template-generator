@@ -1,0 +1,122 @@
+---
+title: Multi Qr Recovery Certificate
+bodyClass: bg-gray-100
+---
+
+<extends src="maizzle/src/layouts/main.html">
+  <block name="template">
+    <table class="email-wrapper w-full font-inter p-16 leading-24 text-base">
+      <component src="maizzle/src/components/logo-header.html"></component>
+      <component src="maizzle/src/components/info-box.html">
+        <p>Dear <%- recipientName %>,</p>
+        <p>Your application dated <%- submittedDate %> has been processed successfully.</p>
+        <p>Recovery certificate may be required for travel.</p>
+        <p class="text-sm italic">
+          (Please ensure that the content of this email is only shared with others for relevant purposes.)
+        </p>
+      </component>
+      <component src="maizzle/src/components/view-cert.html"></component>
+      <component src="maizzle/src/components/oa-note.html"></component>
+      <component src="maizzle/src/components/qr-info-box.html"></component>
+      <component src="maizzle/src/components/info-box.html">
+        <p class="pt-16 pb-24">
+          Yours Sincerely,<br />
+          The Notarisαtion Team
+        </p>
+        <p class="text-center text-sm leading-16 text-gray-400 italic">
+          - Below is a preview of the vaccination certificate -
+        </p>
+      </component>
+      <component src="maizzle/src/components/divider.html"></component>
+      <component src="maizzle/src/components/recovery/recovery-info.html"></component>
+      <component src="maizzle/src/components/info-box.html">
+        <table class="pt-24" align="center">
+          <tr>
+            <td class="text-sm p-24 leading-16 travel-advice">
+              Travellers should note that they are subject to the country or region's requirements prior to travel. The
+              QR code used for verification is based on your <u>destination country</u>.
+            </td>
+          </tr>
+        </table>
+      </component>
+      <component src="maizzle/src/components/info-box.html">
+        <div class="text-center">
+          <p class="font-bold my-0 pt-24">Online QR Verification</p>
+          <p class="my-0">This QR Code requires an internet connection to verify.</p>
+          <table style="width: 100%">
+            <tr>
+              <td style="width: 100%; text-align: center" height="200" align="center">
+                <img
+                  width="200"
+                  height="200"
+                  src="cid:qrCode"
+                  class="pt-24"
+                  style="width: 200px; height: 200px; display: block; margin: 0 auto"
+                />
+              </td>
+            </tr>
+          </table>
+          <hr class="line" />
+        </div>
+      </component>
+      <component src="maizzle/src/components/info-box.html">
+        <% if (euHealthCertsInfo.length) { %>
+        <p class="font-bold my-0 pt-24 text-center">Offline QR Verification (EU DCC-compatible)</p>
+        <p class="my-0 text-center">
+          This QR Code does not require an internet connection to verify. Some EU countries may only support this form
+          of verification.
+        </p>
+        <p class="pb-24 text-center">
+          This may also be used for public health measures beyond travel within the EU and should be produced to
+          authorities when required.
+        </p>
+        <p class="pb-24 text-center">
+          The offline QR code is valid till <%- formatDate(euHealthCertsInfo[0].expiryDateTime) %>. This is based on EU DCC rules which recognise a person as recovered status for 180 days after the date of a positive test result.
+        </p>
+        <% for(var v = 0; v < euHealthCertsInfo.length; v++) {
+        var testName = getTestName(patient.recovery.testType); %>
+        <table style="width: 100%">
+            <tr>
+              <td style="width: 100%; text-align: center" height="200" align="center">
+                <div class="pt-12 mx-auto">
+                  <div class="inline-block rounded-xl border-4 border-indigo-300 border-solid py-8 relative">
+                    <p
+                      class="m-0 uppercase text-indigo-700 dark:text-indigo-300 bg-white dark:bg-black text-sm font-semibold"
+                    >
+                      Offline QR (EU DCC)
+                    </p>
+        
+                    <img
+                      src="cid:<%- patient.recovery.testType %>QrCode"
+                      style="display: block; margin: 0 auto"
+                    />
+        
+                    <p class="text-center uppercase text-xs m-0 leading-16">
+                        <%- testName %>
+                    </p>
+                  </div>
+                </div>
+        
+                <p class="text-center my-0 mb-16">
+                  <a
+                    href="<%- euHealthCertsInfo[v].appleCovidCardUrl %>"
+                    alt="Add to apple wallet & health"
+                    class="no-underline my-8 inline-block"
+                  >
+                    <img
+                      src="https://www.notarise.gov.sg/images/add-to-apple-wallet-health.png"
+                      alt="Add to apple wallet & health button"
+                      width="150"
+                      height="50"
+                    />
+                  </a>
+                </p>
+              </td>
+            </tr>
+        </table>
+        <% } %> <% } %>
+      </component>
+      <component src="maizzle/src/components/footer.html"></component>
+    </table>
+  </block>
+</extends>

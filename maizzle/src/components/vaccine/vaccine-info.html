@@ -1,0 +1,89 @@
+<tr>
+  <td></td>
+  <td class="pt-24 px-24 email-body content-width">
+    <p>
+      <b><u>VACCINATION CERTIFICATE</u></b>
+    </p>
+
+    <% if (patient.name.length > 0) { %>
+    <p>
+      <b>Name of Person:</b>
+      <br />
+      <%- patient.name[0].text %>
+    </p>
+    <% } %> <% for(var i = 0; i < patient.identifier.length; i++) { %> <% if (patient.identifier[i].type.text ===
+    "NRIC") { %>
+    <p>
+      <b>NRIC/FIN Number:</b>
+      <br />
+      <%- patient.identifier[i].value %>
+    </p>
+    <% } else if (patient.identifier[i].type === "PPN") {%>
+    <p>
+      <b>Passport/Travel Document Number:</b>
+      <br />
+      <%- patient.identifier[i].value %>
+    </p>
+    <% } %> <% } %> <% if (patient.extension.length > 0) { %>
+    <p>
+      <b>Nationality/Citizenship:</b>
+      <br />
+      <%- countries.getName(patient.extension[0].code.text, "en") %>
+    </p>
+    <% } %>
+
+    <p>
+      <b>Date of Birth:</b>
+      <br />
+      <%- formatDate(patient.birthDate) %>
+    </p>
+    <br />
+
+    <% var groupedVaccineCode = Object.keys(groupedImmunizations); for(var v = 0; v < groupedVaccineCode.length; v++) {
+    var vaccineCode = groupedVaccineCode[v]; var immunizations = groupedImmunizations[vaccineCode]; for(var i = 0; i <
+    immunizations.length; i++) { %>
+    <p>
+      <b><u>Dose <%- i + 1 %>:</u></b>
+    </p>
+    <% if (immunizations[i].vaccineCode.coding.length > 0) { %>
+    <p>
+      <b>Manufacturer/Vaccination Name/Brand/Type:</b>
+      <br />
+      <%- immunizations[i].vaccineCode.coding[0].display %>
+    </p>
+    <% } %>
+
+    <p>
+      <b>Clinic/Vaccination Centre:</b>
+      <br />
+      <%- locations.find(l => l.fullUrl === immunizations[i].location.reference).name %>
+    </p>
+
+    <p>
+      <b>Date of Vaccination:</b>
+      <br />
+      <%- formatDate(immunizations[i].occurrenceDateTime) %>
+    </p>
+
+    <p>
+      <b>Batch Number:</b>
+      <br />
+      <%- immunizations[i].lotNumber %>
+    </p>
+
+    <p>
+      <b>Country/Region of Vaccination:</b>
+      <br />
+      <%- countries.getName(locations.find(l => l.fullUrl === immunizations[i].location.reference).address.country,
+      "en") %>
+    </p>
+
+    <p>
+      <b>Health Worker:</b>
+      <br />
+      <%- immunizations[i].performer[0].actor.display %>
+    </p>
+    <% } %> <% } %>
+  </td>
+  <td></td>
+</tr>

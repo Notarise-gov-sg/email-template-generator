@@ -1,0 +1,6 @@
+.DS_Store
+dist
+secrets
+node_modules
+maizzle/build_local/*
+.npm
