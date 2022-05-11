@@ -12,6 +12,12 @@ A helper library for generate Notarise email templates.
 npm i @notarise-gov-sg/email-template-generator
 ```
 
+Add this to ignore the transformation of export html templates in `jest.config`
+
+```json
+transformIgnorePatterns: ["/node_modules/(?!@notarise-gov-sg/email-template-generator)"]
+```
+
 ### Import & use require template
 
 ```javascript

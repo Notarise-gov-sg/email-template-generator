@@ -27,7 +27,7 @@
     "maizzle:build-prod": "maizzle build production",
     "maizzle:watch": "maizzle serve"
   },
-  "copyFiles":[
+  "copyFiles": [
     {
       "from": "src/emailTemplates/*",
       "to": "dist/emailTemplates/"
@@ -42,7 +42,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@maizzle/cli": "^1.4.0",
-    "@maizzle/framework": "^3.7.3",
+    "@maizzle/framework": "^3.7.2",
     "@types/debug": "^4.1.7",
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
