@@ -14,7 +14,7 @@ npm i @notarise-gov-sg/email-template-generator
 
 Add this to ignore the transformation of export html templates in `jest.config`
 
-```json
+```javascript
 transformIgnorePatterns: ["/node_modules/(?!@notarise-gov-sg/email-template-generator)"]
 ```
 
