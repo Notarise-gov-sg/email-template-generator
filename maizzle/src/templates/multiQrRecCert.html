@@ -17,7 +17,9 @@ bodyClass: bg-gray-100
       </component>
       <component src="maizzle/src/components/view-cert.html"></component>
       <component src="maizzle/src/components/oa-note.html"></component>
-      <component src="maizzle/src/components/qr-info-box.html"></component>
+      <% if (euHealthCertsInfo.length) { %>
+      <component src="maizzle/src/components/recovery/qr-info-box.html"></component>
+      <% } %>
       <component src="maizzle/src/components/info-box.html">
         <p class="pt-16 pb-24">
           Yours Sincerely,<br />
