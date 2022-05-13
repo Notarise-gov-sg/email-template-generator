@@ -10,6 +10,11 @@
 */
 
 module.exports = {
+  minify: {
+    lineLengthLimit: 500,
+    removeIndentations: true,
+    breakToTheLeftOf: []
+  },
   build: {
     templates: {
       destination: {
