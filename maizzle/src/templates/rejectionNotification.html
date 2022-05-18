@@ -1,0 +1,49 @@
+---
+title: "Notarise: Rejection Notification"
+---
+
+<extends src="maizzle/src/layouts/main.html">
+  <block name="template">
+    <table class="email-wrapper w-full font-inter p-16 leading-24 text-base">
+      <component src="maizzle/src/components/logo-header.html"></component>
+      <component src="maizzle/src/components/info-box.html">
+        <tr>
+          <td></td>
+          <td
+            class="email-body"
+            style="background-color: #ffffff; width: 550px; padding-left: 24px; padding-right: 24px"
+          >
+            <p>Dear Sir/Madam,</p>
+            <p><%- message %></p>
+            <div>Clinic name - <%- name %></div>
+            <div>Domain - <%- domain %></div>
+            <div>HCI code - <%- hci %></div>
+            <div>Type - <%- capsType %></div>
+
+            <p>has been rejected for the following reason(s):</p>
+            <ul>
+              <% _.forEach(errors, function(errors) { %>
+              <li><%- errors %></li>
+              <% }); %>
+            </ul>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td
+            class="email-body"
+            style="background-color: #ffffff; width: 550px; padding-left: 24px; padding-right: 24px"
+          >
+            <p style="padding-bottom: 24px">
+              Regards,<br />
+              The Notarisαtion Team
+            </p>
+          </td>
+          <td></td>
+        </tr>
+      </component>
+      <component src="maizzle/src/components/footer-no-case-ref.html"></component>
+    </table>
+  </block>
+</extends>
