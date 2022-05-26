@@ -9,35 +9,29 @@ title: "Notarise: Thank you for subscribing."
       <component src="maizzle/src/components/info-box.html">
         <p>Welcome!</p>
         <p>
-          Thank you for subscribing to our newsletter. We will be providing periodic updates through our newsletter to help you get important information on HealthCerts or related developments.
+          Thank you for subscribing to our newsletter. We will be providing periodic updates through our newsletter to
+          help you get important information on HealthCerts or related developments.
         </p>
-        <p>Below are useful links to help you with your upcoming travels.
-          <p>
-            <a class="hyperlink" href="" target="_blank">Safe Travel</a> - Get the latest relevant travel arrangements
-              and resources
-            <br>
-            <a class="hyperlink" href="" target="_blank">MOH-approved PDT clinics</a> - MOH-approved clinics that
-              provide PCR and ART as pre-departure tests In the meanwhile, stay safe.
-          </p>
-        </p>
-        <p class="pb-16">
+        <p>Below are useful links to help you with your upcoming travels.</p>
+        <ul>
+          <li>
+            <a class="hyperlink" href="https://safetravel.ica.gov.sg/" target="_blank">SafeTravel</a> - Get the latest
+            relevant travel arrangements and resources
+          </li>
+          <li>
+            <a class="hyperlink" href="https://www.notarise.gov.sg/art-clinics" target="_blank"
+              >MOH-approved PDT providers</a
+            >
+            - MOH-approved providers that provide PCR and ART as pre-departure tests.
+          </li>
+        </ul>
+        <p>In the meanwhile, stay safe.</p>
+        <p class="pb-8 pt-24">
           Regards,<br />
           The Notαrise Team
         </p>
       </component>
-      <tr>
-        <td></td>
-        <td class="email-footer pt-0 px-24 text-sm leading-20">
-          <a
-            href="<%- unsubscribeUrl %>"
-            target="_blank"
-            class="block leading-full py-12 px-48 font-bold text-center text-xs"
-            >Unsubscribe.</a>
-        </td>
-        <td></td>
-      </tr>
-
-      <component src="maizzle/src/components/footer.html"></component>
+      <component src="maizzle/src/components/footer-no-case-ref.html"></component>
     </table>
   </block>
 </extends>
