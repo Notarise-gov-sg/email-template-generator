@@ -1,48 +1,46 @@
 <tr>
-    <td></td>
-    <td class="pt-24 px-24 email-body content-width">
+  <td>&nbsp;</td>
+  <td class="pt-24 px-24 email-body content-width">
+    <p>
+      <b><u>RECOVERY CERTIFICATE</u></b>
+    </p>
 
-        <p><b><u>RECOVERY CERTIFICATE</u></b></p>
+    <% if (patient.name) { %>
+    <p>
+      <b>Name of Person:</b>
+      <br />
+      <%- patient.name %>
+    </p>
+    <% } %> <% if (patient.nricfin) { %>
+    <p>
+      <b>NRIC/FIN Number:</b>
+      <br />
+      <%- patient.nricfin %>
+    </p>
+    <% } %> <% if (patient.passportNumber) { %>
+    <p>
+      <b>Passport/Travel Document Number:</b>
+      <br />
+      <%- patient.passportNumber %>
+    </p>
+    <% } %>
 
-        <% if (patient.name) { %>
-        <p>
-            <b>Name of Person:</b>
-            <br/>
-            <%- patient.name %>
-        </p>
-        <% } %>
+    <p>
+      <b>Nationality/Citizenship:</b>
+      <br />
+      <%- countries.getName(patient.nationality, "en") %>
+    </p>
 
-        <% if (patient.nricfin) { %>
-        <p>
-            <b>NRIC/FIN Number:</b>
-            <br/>
-            <%- patient.nricfin %>
-        </p>
-        <% } %>
+    <p>
+      <b>Date of Birth:</b>
+      <br />
+      <%- formatDate(patient.dob) %>
+    </p>
 
-        <% if (patient.passportNumber) { %>
-        <p>
-            <b>Passport/Travel Document Number:</b>
-            <br/>
-            <%- patient.passportNumber %>
-        </p>
-        <% } %>
-        
-        <p>
-            <b>Nationality/Citizenship:</b>
-            <br/>
-            <%- countries.getName(patient.nationality, "en") %>
-        </p>
-        
-        <p>
-            <b>Date of Birth:</b>
-            <br/>
-            <%- formatDate(patient.dob) %>
-        </p>
-        
-        <p>
-            The abovementioned tested COVID-19 positive on <%- formatDate(patient.recovery.testDate) %> using a <%- getTestName(patient.recovery.testType) %>.
-        </p>
-</td>
-<td></td>
+    <p>
+      The abovementioned tested COVID-19 positive on <%- formatDate(patient.recovery.testDate) %> using a <%-
+      getTestName(patient.recovery.testType) %>.
+    </p>
+  </td>
+  <td>&nbsp;</td>
 </tr>
