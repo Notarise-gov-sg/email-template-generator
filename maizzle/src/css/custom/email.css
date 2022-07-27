@@ -36,6 +36,11 @@
   @apply text-gray-700;
 }
 
+.eudcc-tag{
+  @apply text-indigo-700 m-0 mb-4 uppercase text-sm font-semibold ;
+}
+
+
 @screen dark {
   body,
   .travel-advice,
@@ -93,5 +98,9 @@
 
   .email-masthead_name {
     text-shadow: none !important;
+  }
+
+  .eudcc-tag{
+    @apply text-indigo-300 !important;
   }
 }

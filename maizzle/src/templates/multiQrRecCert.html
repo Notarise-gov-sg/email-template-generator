@@ -73,48 +73,39 @@ bodyClass: bg-gray-100
           authorities when required.
         </p>
         <p class="pb-24 text-center">
-          The offline QR code is valid till <%- formatDate(euHealthCertsInfo[0].expiryDateTime) %>. This is based on EU DCC rules which recognise a person as recovered status for 180 days after the date of a positive test result.
+          The offline QR code is valid till <%- formatDate(euHealthCertsInfo[0].expiryDateTime) %>. This is based on EU
+          DCC rules which recognise a person as recovered status for 180 days after the date of a positive test result.
         </p>
-        <% for(var v = 0; v < euHealthCertsInfo.length; v++) {
-        var testName = getTestName(patient.recovery.testType); %>
+        <% for(var v = 0; v < euHealthCertsInfo.length; v++) { var testName = getTestName(patient.recovery.testType); %>
         <table style="width: 100%">
-            <tr>
-              <td style="width: 100%; text-align: center" height="200" align="center">
-                <div class="pt-12 mx-auto">
-                  <div class="inline-block rounded-xl border-4 border-indigo-300 border-solid py-8 relative">
-                    <p
-                      class="m-0 uppercase text-indigo-700 dark:text-indigo-300 bg-white dark:bg-black text-sm font-semibold"
-                    >
-                      Offline QR (EU DCC)
-                    </p>
-        
-                    <img
-                      src="cid:<%- patient.recovery.testType %>QrCode"
-                      style="display: block; margin: 0 auto"
-                    />
-        
-                    <p class="text-center uppercase text-xs m-0 leading-16">
-                        <%- testName %>
-                    </p>
-                  </div>
+          <tr>
+            <td style="width: 100%; text-align: center" height="200" align="center">
+              <div class="pt-12 mx-auto">
+                <div class="inline-block rounded-xl border-4 border-indigo-300 border-solid py-8 px-4 relative">
+                  <p class="eudcc-tag">Offline QR (EU DCC)</p>
+
+                  <img src="cid:<%- patient.recovery.testType %>QrCode" style="display: block; margin: 0 auto" />
+
+                  <p class="text-center uppercase text-xs m-0 leading-16"><%- testName %></p>
                 </div>
-        
-                <p class="text-center my-0 mb-16">
-                  <a
-                    href="<%- euHealthCertsInfo[v].appleCovidCardUrl %>"
-                    alt="Add to apple wallet & health"
-                    class="no-underline my-8 inline-block"
-                  >
-                    <img
-                      src="https://www.notarise.gov.sg/images/add-to-apple-wallet-health.png"
-                      alt="Add to apple wallet & health button"
-                      width="150"
-                      height="50"
-                    />
-                  </a>
-                </p>
-              </td>
-            </tr>
+              </div>
+
+              <p class="text-center my-0 mb-16">
+                <a
+                  href="<%- euHealthCertsInfo[v].appleCovidCardUrl %>"
+                  alt="Add to apple wallet & health"
+                  class="no-underline my-8 inline-block"
+                >
+                  <img
+                    src="https://www.notarise.gov.sg/images/add-to-apple-wallet-health.png"
+                    alt="Add to apple wallet & health button"
+                    width="150"
+                    height="50"
+                  />
+                </a>
+              </p>
+            </td>
+          </tr>
         </table>
         <% } %> <% } %>
       </component>

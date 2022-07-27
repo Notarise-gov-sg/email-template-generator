@@ -13,18 +13,18 @@ module.exports = {
   build: {
     posthtml: {
       expressions: {
-        delimiters: ["[[", "]]"]
-      }
+        delimiters: ["[[", "]]"],
+      },
     },
     templates: {
       source: "maizzle/src/templates",
       destination: {
-        path: "maizzle/build_local"
-      }
+        path: "maizzle/build_local",
+      },
     },
     tailwind: {
-      css: "maizzle/src/css/tailwind.css"
-    }
+      css: "maizzle/src/css/tailwind.css",
+    },
   },
-  googleFonts: "family=Inter:wght@400;700"
+  googleFonts: "family=Inter:wght@400;600;700",
 };
