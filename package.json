@@ -44,7 +44,7 @@
     "@maizzle/cli": "^1.4.0",
     "@maizzle/framework": "^3.7.2",
     "@types/debug": "^4.1.7",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.2",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "copy-files-from-to": "^3.2.2",
