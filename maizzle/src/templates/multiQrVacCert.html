@@ -34,7 +34,7 @@ bodyClass: bg-gray-100
       <component src="maizzle/src/components/info-box.html">
         <table class="pt-24" align="center">
           <tr>
-            <td class="text-sm p-24 leading-16 travel-advice">
+            <td class="text-sm p-24 leading-18 travel-advice">
               Travellers should note that they are subject to the country or region's requirements prior to travel. The
               QR code used for verification is based on your <u>destination country</u>. <% if
               (euHealthCertsInfo.length) { %> <br /><br />The QR codes in this Vaccination HealthCert is valid until
@@ -42,9 +42,9 @@ bodyClass: bg-gray-100
                 ><%- formatDate(euHealthCertsInfo[0].expiryDateTime, { day: "numeric", month: "short", year: "numeric"
                 }) %></b
               >. You may visit <a class="hyperlink" href="https://notarise.gov.sg/">Notαrise.gov.sg</a> at any time to
-              obtain a new Vaccination HealthCert to extend the cert expiry date. Please note that expiry of your
-              Vaccination HealthCert does not constitute the expiry of your vaccination records or vaccination status in
-              Singapore. <% } %>
+              obtain a new Vaccination HealthCert to extend the expiry date of the QR codes. Please note that expiry of
+              the QR codes do not constitute the expiry of your vaccination records or vaccination status in Singapore.
+              <% } %>
             </td>
           </tr>
         </table>

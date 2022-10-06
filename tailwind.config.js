@@ -2,15 +2,12 @@
 module.exports = {
   purge: {
     enabled: true,
-    content: [
-      "./maizzle/build_local/*.html",
-      "./src/emailTemplates/*.html"
-    ]
+    content: ["./maizzle/build_local/*.html", "./src/emailTemplates/*.html"],
   },
   theme: {
     screens: {
       sm: { max: "600px" },
-      dark: { raw: "(prefers-color-scheme: dark)" }
+      dark: { raw: "(prefers-color-scheme: dark)" },
     },
     extend: {
       colors: {
@@ -24,8 +21,8 @@ module.exports = {
           600: "#475569",
           700: "#364152",
           800: "#27303F",
-          900: "#1A202E"
-        }
+          900: "#1A202E",
+        },
       },
       spacing: {
         screen: "100vw",
@@ -45,6 +42,7 @@ module.exports = {
         12: "12px",
         14: "14px",
         16: "16px",
+        18: "18px",
         20: "20px",
         21: "21px",
         24: "24px",
@@ -93,7 +91,7 @@ module.exports = {
         "8/12": "66.666667%",
         "9/12": "75%",
         "10/12": "83.333333%",
-        "11/12": "91.666667%"
+        "11/12": "91.666667%",
       },
       borderRadius: {
         none: "0px",
@@ -104,7 +102,7 @@ module.exports = {
         xl: "12px",
         "2xl": "16px",
         "3xl": "24px",
-        full: "9999px"
+        full: "9999px",
       },
       fontSize: {
         xs: "0.75rem",
@@ -116,19 +114,19 @@ module.exports = {
         "3xl": "1.875rem",
         "4xl": "2.25rem",
         "5xl": "3rem",
-        "6xl": "4rem"
+        "6xl": "4rem",
       },
       inset: (theme) => ({
-        ...theme("spacing")
+        ...theme("spacing"),
       }),
       letterSpacing: (theme) => ({
-        ...theme("spacing")
+        ...theme("spacing"),
       }),
       lineHeight: (theme) => ({
-        ...theme("spacing")
+        ...theme("spacing"),
       }),
       maxHeight: (theme) => ({
-        ...theme("spacing")
+        ...theme("spacing"),
       }),
       maxWidth: (theme) => ({
         ...theme("spacing"),
@@ -142,15 +140,15 @@ module.exports = {
         "4xl": "448px",
         "5xl": "512px",
         "6xl": "576px",
-        "7xl": "640px"
+        "7xl": "640px",
       }),
       minHeight: (theme) => ({
-        ...theme("spacing")
+        ...theme("spacing"),
       }),
       minWidth: (theme) => ({
-        ...theme("spacing")
-      })
-    }
+        ...theme("spacing"),
+      }),
+    },
   },
   plugins: [require("tailwindcss-font-inter")],
   corePlugins: {
@@ -159,6 +157,6 @@ module.exports = {
     borderOpacity: false,
     divideOpacity: false,
     placeholderOpacity: false,
-    textOpacity: false
-  }
+    textOpacity: false,
+  },
 };
