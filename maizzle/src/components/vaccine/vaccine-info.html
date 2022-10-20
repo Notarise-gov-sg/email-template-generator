@@ -39,36 +39,42 @@
     </p>
     <br />
 
-    <% var groupedVaccineCode = Object.keys(groupedImmunizations); for(var v = 0; v < groupedVaccineCode.length; v++) {
-    var vaccineCode = groupedVaccineCode[v]; var immunizations = groupedImmunizations[vaccineCode]; for(var i = 0; i <
-    immunizations.length; i++) { %>
+    <% for(var i = 0; i < immunizations.length; i++) { var immunization = immunizations[i]; var totalIterator = i + 1;
+    var doseIterator = immunizations.slice(0, i).filter( ({ vaccineCode }) => vaccineCode.coding[0].code ===
+    immunization.vaccineCode.coding[0].code).length + 1; %>
     <p>
-      <b><u>Dose <%- i + 1 %>:</u></b>
+      <b>
+        <u
+          ><%- totalIterator %>. <%- getSddVaccineInformation(immunization.vaccineCode.coding[0].code).short_name %>
+          (Dose <%- doseIterator %>):</u
+        >
+      </b>
     </p>
-    <% if (immunizations[i].vaccineCode.coding.length > 0) { %>
+
+    <% if (immunization.vaccineCode.coding.length > 0) { %>
     <p>
       <b>Manufacturer/Vaccination Name/Brand/Type:</b>
       <br />
-      <%- immunizations[i].vaccineCode.coding[0].display %>
+      <%- immunization.vaccineCode.coding[0].display %>
     </p>
     <% } %>
 
     <p>
       <b>Clinic/Vaccination Centre:</b>
       <br />
-      <%- locations.find(l => l.fullUrl === immunizations[i].location.reference).name %>
+      <%- locations.find(l => l.fullUrl === immunization.location.reference).name %>
     </p>
 
     <p>
       <b>Date of Vaccination:</b>
       <br />
-      <%- formatDate(immunizations[i].occurrenceDateTime) %>
+      <%- formatDate(immunization.occurrenceDateTime) %>
     </p>
 
     <p>
       <b>Batch Number:</b>
       <br />
-      <%- immunizations[i].lotNumber %>
+      <%- immunization.lotNumber %>
     </p>
 
     <p>
@@ -81,9 +87,9 @@
     <p>
       <b>Health Worker:</b>
       <br />
-      <%- immunizations[i].performer[0].actor.display %>
+      <%- immunization.performer[0].actor.display %>
     </p>
-    <% } %> <% } %>
+    <% } %>
   </td>
   <td>&nbsp;</td>
 </tr>
