@@ -97,7 +97,9 @@ bodyClass: bg-gray-100
           authorities when required.
         </p>
         <% for(var v = 0; v < euHealthCertsInfo.length; v++) { var vaccineCode = euHealthCertsInfo[v].vaccineCode; var
-        shortName = getSddVaccineInformation(vaccineCode).short_name; %>
+        shortName = getSddVaccineInformation(vaccineCode).short_name; var totalIterator = v + 1; var doseIterator =
+        euHealthCertsInfo.slice(0, v).filter( ({ vaccineCode: _vaccineCode }) => _vaccineCode === vaccineCode).length +
+        1; %>
         <table style="width: 100%">
           <tr>
             <td style="width: 100%; text-align: center" height="200" align="center">
@@ -111,7 +113,7 @@ bodyClass: bg-gray-100
                   />
 
                   <p class="text-center uppercase text-xs m-0 leading-16">
-                    <%- shortName %> (DOSE <%- euHealthCertsInfo[v].doseNumber %>)
+                    <%- totalIterator %>. <%- shortName %> (DOSE <%- doseIterator %>)
                   </p>
                 </div>
               </div>
