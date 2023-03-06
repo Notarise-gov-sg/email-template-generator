@@ -10,7 +10,7 @@ bodyClass: bg-gray-100
       <component src="maizzle/src/components/info-box.html">
         <p>Dear <%- recipientName %>,</p>
         <p>Your application dated <%- submittedDate %> has been processed successfully.</p>
-        <p>Recovery certificate may be required for travel.</p>
+        <p>A recovery certificate may be required for travel.</p>
         <p class="text-sm italic">
           (Please ensure that the content of this email is only shared with others for relevant purposes.)
         </p>
@@ -23,10 +23,10 @@ bodyClass: bg-gray-100
       <component src="maizzle/src/components/info-box.html">
         <p class="pt-16 pb-24">
           Yours Sincerely,<br />
-          The Notarisαtion Team
+          The Notαrise Team
         </p>
-        <p class="text-center text-sm leading-16 text-gray-400 italic">
-          - Below is a preview of the vaccination certificate -
+        <p class="text-center text-sm cert-preview leading-16 italic">
+          - Below is a preview of the recovery certificate -
         </p>
       </component>
       <component src="maizzle/src/components/divider.html"></component>
@@ -34,9 +34,9 @@ bodyClass: bg-gray-100
       <component src="maizzle/src/components/info-box.html">
         <table class="pt-24" align="center">
           <tr>
-            <td class="text-sm p-24 leading-16 travel-advice">
-              Travellers should note that they are subject to the country or region's requirements prior to travel. The
-              QR code used for verification is based on your <u>destination country</u>.
+            <td class="p-24 leading-24 travel-advice">
+              Travellers should note that they are subject to the country or region's requirements prior to travel. This
+              HealthCert is <u>not</u> compatible with the EU Digital Covid Certificate.
             </td>
           </tr>
         </table>
