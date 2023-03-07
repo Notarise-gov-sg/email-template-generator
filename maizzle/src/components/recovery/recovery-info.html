@@ -4,7 +4,9 @@
     <p>
       <b><u>RECOVERY CERTIFICATE</u></b>
     </p>
-
+    <p class="i text-sm">
+      A recovery certificate is provided to individuals who had tested positive for COVID-19 in Singapore.
+    </p>
     <% if (patient.name) { %>
     <p>
       <b>Name of Person:</b>
@@ -37,10 +39,13 @@
       <%- formatDate(patient.dob) %>
     </p>
 
+    <p>To whom it may concern:</p>
     <p>
-      The abovementioned tested COVID-19 positive on <%- formatDate(patient.recovery.testDate) %> using a <%-
-      getTestName(patient.recovery.testType) %>.
+      <%- patient.name %> has been diagnosed with SARS-CoV-2 (COVID-19) on <%- formatDate(patient.recovery.testDate) %>
+      using a <%- getTestName(patient.recovery.testType) %>.
     </p>
+
+    <p>Thank you</p>
   </td>
   <td>&nbsp;</td>
 </tr>
