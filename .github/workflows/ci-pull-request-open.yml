@@ -16,6 +16,13 @@ on:
 
 jobs:
   test:
-    uses: notarise-gov-sg/workflows/.github/workflows/deploy-ci-open.yml@master
-    with:
-      deploy: false
+    runs-on: ubuntu-latest
+    name: Tests
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run type-check
