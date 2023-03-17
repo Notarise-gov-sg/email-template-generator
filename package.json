@@ -6,6 +6,9 @@
     "name": "Notarise",
     "email": "notariseteamsg@gmail.com"
   },
+  "engines": {
+    "npm": ">=8"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Notarise-gov-sg/email-template-generator.git"
