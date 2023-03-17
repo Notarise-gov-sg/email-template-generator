@@ -9,8 +9,7 @@ on:
 jobs:
   test:
     name: Tests
-    runs-on: self-hosted
-    container: public.ecr.aws/ubuntu/ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -22,8 +21,7 @@ jobs:
   release:
     name: Build and Release
     needs: test
-    runs-on: self-hosted
-    container: public.ecr.aws/ubuntu/ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:

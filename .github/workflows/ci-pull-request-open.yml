@@ -16,8 +16,7 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
-    container: public.ecr.aws/ubuntu/ubuntu:latest
+    runs-on: ubuntu-latest
     name: Tests
     steps:
       - uses: actions/checkout@v3
