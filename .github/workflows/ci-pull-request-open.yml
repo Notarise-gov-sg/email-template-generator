@@ -16,6 +16,6 @@ on:
 
 jobs:
   test:
-    uses: notarise-gov-sg/workflows/.github/workflows/deploy-ci-open.yml@feat/cypress-api-test
+    uses: notarise-gov-sg/workflows/.github/workflows/deploy-ci-open.yml@master
     with:
       deploy: false
