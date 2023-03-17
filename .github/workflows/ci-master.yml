@@ -31,6 +31,7 @@ jobs:
           node-version: 18.x
           cache: npm
       - run: npm ci
+      - run: npm run maizzle:build-prod
       - run: npm run build
       - run: npx semantic-release
         env:
